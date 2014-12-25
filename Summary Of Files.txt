@@ -1,0 +1,89 @@
+Here is a listing and description of all the files contained in this package:
+
+
+
+DIRECTORY: ./
+---------------------------------------------------------------------------------------
+Makefile
+	The Makefile which compiles the various programs I created.
+lsys.c
+	A file obtained from A. Mariano (refer to references in thesis or on website)
+	which creates a file with x-y plots described by a given L-System.
+concorde.c
+	In order to successfully compile and run these programs, you will need to
+	download the source code for Concorde, replace the TSP/concorde.c file with
+	this one, then compile and build the Concorde program.
+---------------------------------------------------------------------------------------
+
+
+
+DIRECTORY: ./ls/
+---------------------------------------------------------------------------------------
+ls_pop.h
+	Defines a population of L-Systems and some methods needed to work with them.
+ls_pop.c
+	Implements the methods defined in the file ls_pop.h.
+ls.h
+	Defines an L-System structure and some methods needed to work with them.
+ls.c
+	Implements the methods defined in the file ls.h.
+---------------------------------------------------------------------------------------
+
+
+
+DIRECTORY: ./memetic/
+---------------------------------------------------------------------------------------
+evoalg.c
+	The evolutionary program that evolves L-Systems to creates instances that
+	are relatively difficult for Concorde to solve.
+agent.c
+	A program that performs a local search by perturbing an L-System in different
+	ways.
+---------------------------------------------------------------------------------------
+
+
+
+DIRECTORY: ./mt19937ar/
+---------------------------------------------------------------------------------------
+mt19937ar.h
+	The header file for mt19937ar.c. I have modified this to allow the use of 
+	different RNGs in separate threads.
+mt19937ar.c
+	The implementation of the Mersenne Twister Pseudo-Random Number Generator.
+	Coded by Takuji Nishimura and Makoto Matsumoto. I have modified this to
+	allow the use of different RNGs in separate threads.
+---------------------------------------------------------------------------------------
+
+
+
+DIRECTORY: ./sortalg/
+---------------------------------------------------------------------------------------
+mergesort_ls.h
+	The sorting algorithm which sorts a population of L-Systems (stored in an
+	array) from best to worst.
+mergesort_ls.c
+	Implements the sorting algorithm defined in sortalg/mergesort_ls.h.
+---------------------------------------------------------------------------------------
+
+
+
+DIRECTORY: ./util/
+---------------------------------------------------------------------------------------
+ls2tsp.c
+	A small program that creates the TSPlib files of a specified L-System.
+upper_bound.h
+	A library of functions to help with computing the upper bound on a set of (x,y)
+	data points. This technique is used to compute the fitness of a fractal.
+upper_bound.c
+	Implements the functions described in the header file upper_bound.h.
+analyse_ls.c
+	Given an L-System file (created using the lsys.c code) this program will compute
+	an upper bound and then allows the user to test the upper bound on instances of
+	other sizes. Also, the user can specify an arbitrary order and this program will
+	run Concorde 15 times and compute the average and standard deviations of the
+	average running times and number of branch and bound nodes created.
+tspsol2mp
+	Given a TSP file and its corresponding solution file, this program will compute 
+	the total cost of the tour and if requested, create a PostScript file (generated 
+	by METAPOST) containing the graphical representation of the tour.
+---------------------------------------------------------------------------------------
